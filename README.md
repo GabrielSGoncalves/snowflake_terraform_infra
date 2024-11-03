@@ -20,7 +20,21 @@ terraform apply
 terraform destroy
 ```
 Other Terraform commands can be used to provide information for the current state of the repository and infrastructure:
-
+```bash
+terraform validate # checks if resources were correctly defined
+terraform fmt # formats Terraform files
+terraform show # Displays current state of the infrastructure
+terraform show -json # Displays current state of the infrastructure in json format
+terraform providers # Displays used providers 
+terraform output # Returns all defined outputs 
+terraform refresh # Updates the state file with the current remote infrastructure state
+terraform graph # Returns information about dependencies for all of your resources
+```
+For the graph dependency, we can use graphviz to visualize the Terraform dependency graph:
+```bash
+sudo apt install graphviz
+terraform graph | dot -Tsvg >  graph.svg
+```
 
 ## Creating a Snowflake Service User for Terraform
 You may create a new Git repository for this project, or use an already created one.
